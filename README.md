@@ -1,0 +1,1 @@
+# edc-content-type-map
