@@ -10,14 +10,14 @@ with open(os.path.join(os.path.dirname(__file__), 'README.md')) as readme:
 os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
-    name='edc_content_type_map',
+    name='edc-content-type-map',
     version='0.1.4',
     author=u'Erik van Widenfelt',
     author_email='ew2789@gmail.com',
     packages=find_packages(),
     include_package_data=True,
-    url='http://github/erikvw/edc-content-type-map',
-    license='GPL licence, see LICENCE',
+    url='https://github.com/erikvw/edc-content-type-map',
+    license='GPL license, see LICENSE',
     description='content type mapping.',
     long_description=README,
     zip_safe=False,
