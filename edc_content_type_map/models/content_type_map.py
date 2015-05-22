@@ -9,7 +9,8 @@ from ..managers import ContentTypeMapManager
 
 class ContentTypeMap(BaseModel):
 
-    content_type = models.ForeignKey(ContentType,
+    content_type = models.ForeignKey(
+        ContentType,
         verbose_name='Link to content type',
         null=True,
         blank=True,

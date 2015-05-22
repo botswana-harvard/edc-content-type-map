@@ -11,21 +11,20 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name='edc-content-type-map',
-    version='0.1.4',
+    version='0.1.0',
     author=u'Erik van Widenfelt',
     author_email='ew2789@gmail.com',
     packages=find_packages(),
     include_package_data=True,
-    url='https://github.com/erikvw/edc-content-type-map',
+    url='https://github.com/botswana-harvard/edc-content-type-map',
     license='GPL license, see LICENSE',
     description='content type mapping.',
     long_description=README,
     zip_safe=False,
     keywords='django contenttype',
     install_requires=[
-        'Django>=1.7',
-        'django-extensions>=1.5.5',
         'unipath>=1.1',
+        'edc-base>=0.1',
     ],
     classifiers=[
         'Environment :: Web Environment',
