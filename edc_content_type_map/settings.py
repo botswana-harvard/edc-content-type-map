@@ -38,7 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django_crypto_fields',
+    'edc_content_type_map',
 )
 
 MIDDLEWARE_CLASSES = (
