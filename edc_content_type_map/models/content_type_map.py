@@ -58,7 +58,7 @@ class ContentTypeMap(BaseModel):
                 'Run sync_content_type management command.'.format(self.model, self.content_type.model))
         return self.content_type.model_class()
 
-    def __unicode__(self):
+    def __str__(self):
         return '{}.{}'.format(self.content_type.app_label, self.content_type.model)
 
     class Meta:
