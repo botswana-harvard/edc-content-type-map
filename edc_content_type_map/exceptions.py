@@ -1,2 +1,3 @@
+
 class ContentTypeMapError(Exception):
     pass

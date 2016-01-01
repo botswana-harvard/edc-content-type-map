@@ -1,13 +1,12 @@
 import factory
 
-from edc_base.model.tests.factories import BaseModelFactory
-
-from ...models import ContentTypeMap
+from edc_content_type_map.models import ContentTypeMap
 
 from .content_type_factory import ContentTypeFactory
 
 
-class ContentTypeMapFactory(BaseModelFactory):
+class ContentTypeMapFactory(factory.django.DjangoModelFactory):
+
     class Meta:
         model = ContentTypeMap
 

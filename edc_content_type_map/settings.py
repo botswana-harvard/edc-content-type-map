@@ -38,6 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'edc_base',
     'edc_content_type_map',
 )
 
@@ -46,13 +47,13 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
+    # 'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'django.middleware.security.SecurityMiddleware',
+    # 'django.middleware.security.SecurityMiddleware',
 )
 
-ROOT_URLCONF = 'urls'
+ROOT_URLCONF = 'edc_content_type_map.urls'
 
 TEMPLATES = [
     {
@@ -70,7 +71,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'wsgi.application'
+WSGI_APPLICATION = 'edc_content_type_map.wsgi.application'
 
 
 # Database
@@ -95,10 +96,24 @@ USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+
+GIT_DIR = BASE_DIR.ancestor(1)
+
+SITE_CODE = '10'
+DEVICE_ID = '10'
+SERVER_DEVICE_ID_LIST = [99]
+MIDDLEMAN_DEVICE_ID_LIST = []
+PROJECT_ROOT = BASE_DIR.ancestor(1)
+FIELD_MAX_LENGTH = 'default'
+IS_SECURE_DEVICE = True
+KEY_PATH = os.path.join(BASE_DIR.ancestor(1), 'crypto_fields')
+KEY_PREFIX = 'user'
+ALLOW_MODEL_SERIALIZATION = False
+DISPATCH_APP_LABELS = []
