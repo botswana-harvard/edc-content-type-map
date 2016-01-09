@@ -64,6 +64,5 @@ class ContentTypeMap(BaseModel):
 
     class Meta:
         app_label = 'edc_content_type_map'
-        db_table = 'bhp_content_type_map_contenttypemap'
         unique_together = ['app_label', 'model', ]
         ordering = ['name', ]
