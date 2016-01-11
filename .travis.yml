@@ -43,7 +43,7 @@ install:
   - pip install -q -r requirements.txt
 
 before_script:
-  - flake8 edc_content_type
+  - flake8 edc_content_type_map
   - mysql -e 'create database edc;'
   - mysql -e 'create database edc_lab;'
 
