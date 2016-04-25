@@ -4,7 +4,13 @@ from django.db import models
 from edc_base.model.models import BaseModel
 
 from ..exceptions import ContentTypeMapError
-from ..managers import ContentTypeMapManager
+
+
+class ContentTypeMapManager(models.Manager):
+
+    def get_by_natural_key(self, app_label, model):
+        content_type = ContentType.objects.get_by_natural_key(app_label, model)
+        return self.get(content_type=content_type)
 
 
 class ContentTypeMap(BaseModel):
@@ -13,30 +19,25 @@ class ContentTypeMap(BaseModel):
         ContentType,
         verbose_name='Link to content type',
         null=True,
-        blank=True,
-    )
+        blank=True)
 
     app_label = models.CharField(
         max_length=50,
-        db_index=True,
-    )
+        db_index=True)
 
     name = models.CharField(
         verbose_name='Model verbose_name',
         max_length=50,
-        db_index=True,
-    )
+        db_index=True)
 
     model = models.CharField(
         verbose_name='Model name (module name)',
         max_length=50,
-        db_index=True,
-    )
+        db_index=True)
 
     module_name = models.CharField(
         max_length=50,
-        null=True,
-    )
+        null=True)
 
     objects = ContentTypeMapManager()
 

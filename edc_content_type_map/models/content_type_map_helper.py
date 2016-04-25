@@ -2,9 +2,9 @@ from django.contrib.contenttypes.models import ContentType
 from django.core.exceptions import MultipleObjectsReturned
 from django.db.models import F
 
-
 from ..exceptions import ContentTypeMapError
-from ..models import ContentTypeMap
+
+from .content_type_map import ContentTypeMap
 
 
 class ContentTypeMapHelper(object):
@@ -54,7 +54,7 @@ class ContentTypeMapHelper(object):
                     content_type_map.save(update_fields=['content_type'])
                 except ContentType.DoesNotExist:
                     pass
-            except ContentTypeMapError as err_msg:
-                print('Deleting stale ContentTypeMap {}.{}. Got {}'.format(
-                    content_type_map.app_label, content_type_map.model, err_msg))
+            except ContentTypeMapError as err_message:
+                print('Deleting stale ContentTypeMap {}.{}. Got {}').format(
+                    content_type_map.app_label, content_type_map.model, err_message)
                 content_type_map.delete()

@@ -4,12 +4,17 @@ __pycache__/
 .project
 .pydevproject
 .settings
-_build
+db.sqlite3
+test-*
+edc_content_type_map/db.sqlite3
+edc_content_type_map/migrations/*
+
 # C extensions
 *.so
 
 # Distribution / packaging
 .Python
+keys/
 env/
 build/
 develop-eggs/
