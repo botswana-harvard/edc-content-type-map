@@ -44,7 +44,7 @@ class ContentTypeMapHelper(object):
 
         Schema changes might change the key values for records in django's ContentType table.
         Update ContentTypeMap field content_type with the new key."""
-        for content_type_map in ContentTypeMap.objects.using(self.using).exclude(name=F('content_type__name')):
+        for content_type_map in ContentTypeMap.objects.using(self.using).exclude(model=F('content_type__model')):
             try:
                 model = content_type_map.model_class()
                 try:
