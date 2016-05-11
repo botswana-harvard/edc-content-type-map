@@ -11,5 +11,5 @@ factory-boy
 pytz
 pyodbc
 pycups
-git+https://github.com/botswana-harvard/edc-base@develop#egg=edc-base
-git+https://github.com/erikvw/django-revision@develop#egg=django-revision
+git+https://github.com/botswana-harvard/edc-base@master#egg=edc-base
+git+https://github.com/erikvw/django-revision@master#egg=django-revision
