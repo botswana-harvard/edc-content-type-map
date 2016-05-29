@@ -34,7 +34,7 @@ class ContentTypeMapHelper(object):
                             app_label=content_type.app_label,
                             name=content_type.model_class()._meta.verbose_name,
                             model=content_type.model,
-                            module_name=content_type.model_class()._meta.module_name)
+                            module_name=content_type.model_class()._meta.model_name)
                     except AttributeError as attribute_error:
                         if 'object has no attribute \'_meta\'' in str(attribute_error):
                             pass
