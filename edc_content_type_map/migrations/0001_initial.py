@@ -27,7 +27,7 @@ class Migration(migrations.Migration):
                 ('modified', django_extensions.db.fields.ModificationDateTimeField(auto_now=True, verbose_name='modified')),
                 ('user_created', edc_base.model.fields.userfield.UserField(editable=False, max_length=50, verbose_name='user created')),
                 ('user_modified', edc_base.model.fields.userfield.UserField(editable=False, max_length=50, verbose_name='user modified')),
-                ('hostname_created', models.CharField(default='One-2.local', editable=False, help_text='System field. (modified on create only)', max_length=50)),
+                ('hostname_created', models.CharField(default='default', editable=False, help_text='System field. (modified on create only)', max_length=50)),
                 ('hostname_modified', edc_base.model.fields.hostname_modification_field.HostnameModificationField(editable=False, help_text='System field. (modified on every save)', max_length=50)),
                 ('revision', django_revision.revision_field.RevisionField(blank=True, editable=False, help_text='System field. Git repository tag:branch:commit.', max_length=75, null=True, verbose_name='Revision')),
                 ('app_label', models.CharField(db_index=True, max_length=50)),
