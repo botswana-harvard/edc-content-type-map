@@ -3,7 +3,7 @@ from django.db import models
 
 from edc_base.model.models import BaseModel
 
-from ..exceptions import ContentTypeMapError
+from .exceptions import ContentTypeMapError
 
 
 class ContentTypeMapManager(models.Manager):

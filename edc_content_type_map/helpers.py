@@ -1,10 +1,12 @@
+import sys
+
 from django.contrib.contenttypes.models import ContentType
 from django.core.exceptions import MultipleObjectsReturned
 from django.db.models import F
 
-from ..exceptions import ContentTypeMapError
+from .exceptions import ContentTypeMapError
 
-from .content_type_map import ContentTypeMap
+from .models import ContentTypeMap
 
 
 class ContentTypeMapHelper(object):
@@ -38,6 +40,7 @@ class ContentTypeMapHelper(object):
                     except AttributeError as attribute_error:
                         if 'object has no attribute \'_meta\'' in str(attribute_error):
                             pass
+        sys.stdout.write(' * populated content type maps\n')
 
     def sync(self):
         """Syncs content type map foreignkey with django's ContentType id.
@@ -58,3 +61,4 @@ class ContentTypeMapHelper(object):
                 print('Deleting stale ContentTypeMap {}.{}. Got {}').format(
                     content_type_map.app_label, content_type_map.model, err_message)
                 content_type_map.delete()
+        sys.stdout.write(' * sync\'ed content type maps\n')
