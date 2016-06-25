@@ -7,7 +7,7 @@ __pycache__/
 db.sqlite3
 test-*
 edc_content_type_map/db.sqlite3
-edc_content_type_map/migrations/*
+# edc_content_type_map/migrations/*
 
 # C extensions
 *.so
