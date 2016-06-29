@@ -58,7 +58,7 @@ class ContentTypeMapHelper(object):
                 except ContentType.DoesNotExist:
                     pass
             except ContentTypeMapError as err_message:
-                print('Deleting stale ContentTypeMap {}.{}. Got {}').format(
+                sys.stdout.write('Deleting stale ContentTypeMap {}.{}. Got {}\n').format(
                     content_type_map.app_label, content_type_map.model, err_message)
                 content_type_map.delete()
         sys.stdout.write(' * sync\'ed content type maps\n')
