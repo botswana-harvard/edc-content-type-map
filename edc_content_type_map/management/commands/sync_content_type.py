@@ -20,9 +20,9 @@ class Command(BaseCommand):
     help = 'Populate and sync content type map with django content type. (Safe)'
 
     def handle(self, *args, **options):
-        print('Populating / re-populating from django content type...')
+        self.stdout.write('Populating / re-populating from django content type...\n')
         ContentTypeMapHelper().populate()
-        print('Done.')
-        print('Syncing with membership forms, visit definitions, etc...')
+        self.stdout.write('Done.')
+        self.stdout.write('Syncing with membership forms, visit definitions, etc...\n')
         ContentTypeMapHelper().sync()
-        print('Done. You may now check /admin/bhp_content_type_map/contenttypemap/.')
+        self.stdout.write('Done. You may now check /admin/bhp_content_type_map/contenttypemap/.\n')
