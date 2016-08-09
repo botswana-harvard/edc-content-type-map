@@ -1,6 +1,6 @@
 import sys
 
-from django.apps import AppConfig
+from django.apps import AppConfig as DjangoAppConfig
 from django.db.models.signals import post_migrate
 
 
@@ -17,7 +17,7 @@ def edc_content_type_callback(sender, **kwargs):
         sys.stdout.flush()
 
 
-class EdcContentTypeAppConfig(AppConfig):
+class AppConfig(DjangoAppConfig):
     name = 'edc_content_type_map'
     verbose_name = 'Content Type Map'
 
